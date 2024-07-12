@@ -1,0 +1,6 @@
+<h1>ALL POSTS</h1>
+<ul>
+    <li *ngFor="let post of allPost"> 
+        TITLE : {{post.title}} <button [routerLink]="['/detail',post.id]" >Details</button>
+    </li>
+</ul>

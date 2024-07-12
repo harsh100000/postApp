@@ -1,0 +1,17 @@
+<h1>CREATE POST</h1>
+
+<form #form="ngForm" (ngSubmit)="postFormSubmit(form)">
+    <label>TITLE : </label>
+    <input placeholder="Title" name="title" type="text" ngModel required/> <br><br>
+    <label>CONTENT : </label>
+    <input placeholder="Post Content" name="content" type="text" ngModel required/> <br><br>
+    <label>AUTHOR : </label>
+    <input placeholder="Author Name" name="author" type="text" ngModel required> <br><br>
+    <label>DATE : </label>
+    <input placeholder="date" name="date" type="date" ngModel required> <br><br>
+    <label>AGE : </label>
+    <input placeholder="Age" name="age" #age="ngModel" type="text" ngModel required> <br><br>
+    <p *ngIf="!age.valid && age.touched" >Please enter a valid age</p>
+    
+    <button *ngIf="form.valid" type="submit" class="button">Create</button> <br><br>
+</form>
